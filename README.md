@@ -15,6 +15,8 @@ The UNet  segmentor with the additional CRF-as-RNN layer can be found under the 
 
 The experiment engine is inside `expriments/acdc/model.py`. This file contains the main class that is used to train on the ACDC dataset. 
 
+Refer to [this repository](https://github.com/gvalvano/multiscale-adversarial-attention-gates) for details in downloading/using the dataset.
+
 --------------
 ## Requirements:
 

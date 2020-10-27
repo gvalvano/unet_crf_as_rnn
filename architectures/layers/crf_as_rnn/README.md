@@ -1,5 +1,4 @@
 # CRF-as-RNN layer
-_______________________________________________________________________________________________________________________
 
 Implementation adapted from:
 https://github.com/MiguelMonteiro/CRFasRNNLayer
@@ -7,11 +6,8 @@ https://github.com/MiguelMonteiro/CRFasRNNLayer
 Implements Conditional Random Fields as Recurrent Neural Networks as in the repository from the original authors, that
 can be found at: https://github.com/sadeepj/crfasrnn_keras .
 
-_______________________________________________________________________________________________________________________
-
 ************
 # HOW TO USE:
-************
 
 1) update parameters for compiling the layer as you need: 'nano permutohedral_lattice/build.sh'
 
@@ -26,10 +22,9 @@ ________________________________________________________________________________
 
 4) ...and you're ready to go!
 
-
 ************
 # NOTA BENE:
-************
+
 1) Based on the TensorFlow version you are using, you may have to set the flag `-D_GLIBCXX_USE_CXX11_ABI` to 0 or 1. In 
 our case we use `-D_GLIBCXX_USE_CXX11_ABI=1`; if you want to remove this behaviour you can comment the line:
    `target_compile_options(lattice_filter PUBLIC "-D_GLIBCXX_USE_CXX11_ABI=1")`
@@ -39,8 +34,7 @@ for additional information.
 2) Before using, remember to set the C++ and the CUDA compilers inside the file: 
 `architectures/layers/crf_as_rnn/permutohedral_lattice/build.sh`
 
-_______________________________________________________________________________________________________________________
-
+************
 ## References:
 
 @article{monteiro2018conditional,

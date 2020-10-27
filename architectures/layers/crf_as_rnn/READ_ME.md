@@ -1,6 +1,7 @@
+# CRF-as-RNN layer
 _______________________________________________________________________________________________________________________
 
-Implementation from:
+Implementation adapted from:
 https://github.com/MiguelMonteiro/CRFasRNNLayer
 
 Implements Conditional Random Fields as Recurrent Neural Networks as in the repository from the original authors, that
@@ -9,7 +10,7 @@ can be found at: https://github.com/sadeepj/crfasrnn_keras .
 _______________________________________________________________________________________________________________________
 
 ************
-HOW TO USE:
+# HOW TO USE:
 ************
 
 1) update parameters for compiling the layer as you need: 'nano permutohedral_lattice/build.sh'
@@ -27,19 +28,20 @@ HOW TO USE:
 
 
 ************
-NOTA BENE:
+# NOTA BENE:
 ************
 1) Based on the TensorFlow version you are using, you may have to set the flag `-D_GLIBCXX_USE_CXX11_ABI` to 0 or 1. In 
 our case we use `-D_GLIBCXX_USE_CXX11_ABI=1`; if you want to remove this behaviour you can comment the line:
    `target_compile_options(lattice_filter PUBLIC "-D_GLIBCXX_USE_CXX11_ABI=1")`
-inside of the file: `architectures/layers/crf_as_rnn/permutohedral_lattice/CMakeLists.txt`.
+inside of the file: `architectures/layers/crf_as_rnn/permutohedral_lattice/CMakeLists.txt`. Refer to [this](https://github.com/google/sentencepiece/issues/293) github issue
+for additional information.
 
 2) Before using, remember to set the C++ and the CUDA compilers inside the file: 
 `architectures/layers/crf_as_rnn/permutohedral_lattice/build.sh`
 
 _______________________________________________________________________________________________________________________
 
-References:
+## References:
 
 @article{monteiro2018conditional,
   title={Conditional random fields as recurrent neural networks for 3d medical imaging segmentation},

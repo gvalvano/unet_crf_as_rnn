@@ -24,6 +24,8 @@ Refer to `architectures/layers/crf_as_rnn/permutohedral_lattice/README.md` for a
 If your building fails, you may have to manually delete the file `architectures/layers/crf_as_rnn/permutohedral_lattice/config.txt`
 before compiling the layer again.
 
+If you completely fail using the GPU, the model should still work on CPU. So you can explicitly tell TensorFlow to place the CRF-as-RNN layer computations on the CPU.
+
 **************
 ## Notes:
 
@@ -32,8 +34,6 @@ The code was developed for semantic segmentation. We report code for running it 
 The UNet  segmentor with the additional CRF-as-RNN layer can be found under the folder `architectures`. Here, under the folder `architectures/layers` you can also find the CRF-as-RNN layer.
 
 The experiment engine is inside `expriments/acdc/model.py`. This file contains the main class that is used to train on the ACDC dataset. 
-
-Refer to [this repository](https://github.com/gvalvano/multiscale-adversarial-attention-gates) for details in downloading/using the dataset.
 
 **************
 ## Requirements:

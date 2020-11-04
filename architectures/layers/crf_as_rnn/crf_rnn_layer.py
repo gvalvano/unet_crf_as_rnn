@@ -135,11 +135,9 @@ def crf_rnn_layer(unaries, reference_image, num_classes, theta_alpha, theta_beta
             q_values = tf.nn.softmax(q_values)
 
             # Spatial filtering
-            # spatial_out = custom_module.high_dim_filter(q_values, reference_image, bilateral=False, theta_gamma=theta_gamma)
             spatial_out = custom_module.lattice_filter(q_values, reference_image, bilateral=False, theta_gamma=theta_gamma)
 
             # Bilateral filtering
-            # bilateral_out = custom_module.high_dim_filter(q_values, reference_image, bilateral=True, theta_alpha=theta_alpha, theta_beta=theta_beta)
             bilateral_out = custom_module.lattice_filter(q_values, reference_image, bilateral=True, theta_alpha=theta_alpha, theta_beta=theta_beta)
 
             # Weighting filter outputs

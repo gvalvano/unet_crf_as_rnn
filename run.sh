@@ -4,7 +4,8 @@
 # In this example, we will train the model using 50% of the annotated data. Refer to `data_interface/utils_acdc/split_data`
 # for more details on the training volumes. Finally, we test on the ADCD testing volumes.
 
-dpath='../DATA/ACDC'
+data_path_training='../DATA/ACDC'
+data_path_testing='../DATA/ACDC_testing'
 res_dir='.'
 dset_name='acdc'
 
@@ -12,7 +13,7 @@ dset_name='acdc'
 CUDA_VD=0
 
 for run_id_and_path in \
-    'WEAK_ACDC_MultiscaleAAGs_224x224 model'
+    'WEAK_UNet_CRFasRNN_224x224 model'
 
     do
 
@@ -29,7 +30,7 @@ for run_id_and_path in \
             python -m train  --RUN_ID="${run_id}"_${perc}_${split} \
                              --n_epochs=450 \
                              --CUDA_VISIBLE_DEVICE=${CUDA_VD} \
-                             --data_path=${dpath} \
+                             --data_path=${data_path_training} \
                              --experiment="${path}" \
                              --dataset_name=${dset_name} \
                              --verbose=True \
@@ -37,7 +38,6 @@ for run_id_and_path in \
                              --n_sup_vols=${perc} \
                              --split_number=${split}
 
-            data_path_testing='../DATA/ACDC_testing'
             python -m test_on_acdc_test_set \
                             --RUN_ID="${run_id}"_${perc}_${split} \
                             --CUDA_VISIBLE_DEVICE=${CUDA_VD}  \
